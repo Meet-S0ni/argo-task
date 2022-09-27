@@ -1,0 +1,38 @@
+# deployemt 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: webapp
+  name: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flaskdemo
+  template:
+    metadata:
+
+      labels:
+        app: flaskdemo
+    spec:
+      containers:
+      - image: nginx
+        name: webapp
+---
+
+# service 
+apiVersion: v1
+kind: Service
+metadata:
+  name: lb-service
+  labels:
+    app: lb-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+  selector:
+    app: webapp
