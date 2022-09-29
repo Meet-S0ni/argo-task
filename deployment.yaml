@@ -19,7 +19,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: $image
+      - image: httpd
         name: webapp
 ---
 
