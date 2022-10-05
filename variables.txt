@@ -1,0 +1,5 @@
+# this is for environment
+env=adev
+
+# Latest Image 
+new_image=httpd
