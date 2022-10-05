@@ -39,3 +39,4 @@ node {
         // sh 'echo "$env"'
         // sh 'echo "$nimage"'
     // here we are performing replacement in deployment file 
+}
