@@ -2,6 +2,6 @@
 
 git add .
 
-git commit -m"updated Jenkinsfile 35"
+git commit -m"updated Jenkinsfile 36"
 
 git push origin cicd
