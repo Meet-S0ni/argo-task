@@ -28,7 +28,7 @@ node {
         sh 'oimage=$(cat deployment.yaml | grep image | awk '{print $3}')'
 
         sh 'cat deployment.yaml | grep image | awk '{print $3}''
-        sh 'sed -i "s/'$oimage'/'$nimage'/g" deployment.yaml'
+        sh 'sed -i 's/'$oimage'/'$nimage'/g' deployment.yaml'
         sh 'cat deployment.yaml | grep image | awk '{print $3}''
     }
     //     sh 'chmod +x ./script.sh'
