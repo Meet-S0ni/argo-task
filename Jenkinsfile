@@ -23,7 +23,7 @@ node {
     stage('Testing script'){
 
     //     sh 'chmod +x ./script.sh'
-        bash ('script.sh')
+        sh ('script.sh')
     // }
         //     steps {
         //         script {
