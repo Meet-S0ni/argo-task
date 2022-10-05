@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source credentials.txt
+source variables.txt
 
 nimage=$new_image
 env=$env
