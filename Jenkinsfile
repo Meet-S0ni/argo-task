@@ -21,17 +21,20 @@ node {
     // stage('Changing image name in deployment file'){
 
     stage('Testing script') {
-            steps {
-                script {
-                    bash'''#!/bin/bash 
-                    source credentials.txt
-                    nimage=$new_image
-                    env=$env
-                    echo "$nimage"
-                    '''
-                }
-            }
-        }
+
+        sh 'chmod +x ./script.sh'
+        sh "sh script.sh"
+        //     steps {
+        //         script {
+        //             bash'''#!/bin/bash 
+        //             source credentials.txt
+        //             nimage=$new_image
+        //             env=$env
+        //             echo "$nimage"
+        //             '''
+        //         }
+        //     }
+        // }
     // here we are defining variables for replacement command      
         // sh '''source variables.txt
         // nimage=$new_image
