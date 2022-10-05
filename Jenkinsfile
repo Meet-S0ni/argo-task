@@ -24,13 +24,12 @@ node {
         script {
 
         // this is new methos 
-        sh '''
-            "nimage=httpd"
-            "env=adev"
-            "oimage=$(cat deployment.yaml | grep image | awk '{print $3}')"
-            "cat deployment.yaml | grep image | awk '{print $3}'"
-            "sed -i 's/centos/nginx/g' deployment.yaml"
-            "cat deployment.yaml | grep image | awk '{print $3}'"
+        sh ''' "nimage=httpd"
+                "env=adev"
+                "oimage=$(cat deployment.yaml | grep image | awk '{print $3}')"
+                "cat deployment.yaml | grep image | awk '{print $3}'"
+                "sed -i 's/centos/nginx/g' deployment.yaml"
+                "cat deployment.yaml | grep image | awk '{print $3}'"
             '''
         }
     }
