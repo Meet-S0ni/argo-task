@@ -20,10 +20,11 @@ node {
 
     // stage('Changing image name in deployment file'){
 
-    stage('Testing script') {
+    stage('Testing script'){
 
         sh 'chmod +x ./script.sh'
         sh "sh script.sh"
+    }
         //     steps {
         //         script {
         //             bash'''#!/bin/bash 
