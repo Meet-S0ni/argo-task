@@ -20,7 +20,7 @@ node {
 
     stage('Changing image name in deployment file'){
     // here we are defining variables for replacement command      
-        sh '''source credentials.txt
+        sh '''source variables.txt
         nimage=$new_image
         ws=$env'''
         sh 'echo "$env"'
