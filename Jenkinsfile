@@ -21,15 +21,16 @@ node {
     // stage('Changing image name in deployment file'){
 
     stage('replacing image'){
+        script {
 
-    // this is new methos 
-        sh 'nimage=httpd'
-        sh 'env=adev'
-        sh 'oimage=$(cat deployment.yaml | grep image | awk '{print $3}')'
-
-        sh 'cat deployment.yaml | grep image | awk '{print $3}''
-        sh 'sed -i 's/'$oimage'/'$nimage'/g' deployment.yaml'
-        sh 'cat deployment.yaml | grep image | awk '{print $3}''
+        // this is new methos 
+            sh 'nimage=httpd'
+            sh 'env=adev'
+            sh 'oimage=$(cat deployment.yaml | grep image | awk '{print $3}')'
+            sh 'cat deployment.yaml | grep image | awk '{print $3}''
+            sh 'sed -i 's/centos/nginx/g' deployment.yaml'
+            sh 'cat deployment.yaml | grep image | awk '{print $3}''
+        }
     }
     //     sh 'chmod +x ./script.sh'
         // bash ('script.sh')
@@ -52,4 +53,11 @@ node {
         // sh 'echo "$env"'
         // sh 'echo "$nimage"'
     // here we are performing replacement in deployment file 
+
+    // stage('Pushing to Github'){
+    //     sh '''git add .
+    //     git commit -m "updated deployment.yaml"
+    //     git push origin adev
+    //     '''
+    // }
 }
