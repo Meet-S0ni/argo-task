@@ -20,10 +20,19 @@ node {
 
     // stage('Changing image name in deployment file'){
 
-    stage('Testing script'){
+    stage('replacing image'){
 
+    // this is new methos 
+        sh 'nimage=httpd'
+        sh 'env=adev'
+
+        sh 'cat deployment.yaml | grep image | awk '{print $3}''
+        sh 'oimage=$(cat deployment.yaml | grep image | awk '{print $3}')'
+        sh 'sed -i 's/'$oimage'/'$nimage'/g' deployment.yaml'
+        sh 'cat deployment.yaml | grep image | awk '{print $3}''
+    }
     //     sh 'chmod +x ./script.sh'
-        sh ('script.sh')
+        // bash ('script.sh')
     // }
         //     steps {
         //         script {
@@ -35,7 +44,7 @@ node {
         //             '''
         //         }
         //     }
-        }
+        // }
     // here we are defining variables for replacement command      
         // sh '''source variables.txt
         // nimage=$new_image
