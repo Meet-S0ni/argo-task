@@ -23,18 +23,18 @@ node {
     stage('Testing script'){
 
     //     sh 'chmod +x ./script.sh'
-    //     sh "sh script.sh"
+        bash ('script.sh')
     // }
-            steps {
-                script {
-                    bash'''#!/bin/bash 
-                    source variables.txt
-                    nimage=$new_image
-                    env=$env
-                    echo "$nimage"
-                    '''
-                }
-            }
+        //     steps {
+        //         script {
+        //             bash'''#!/bin/bash 
+        //             source variables.txt
+        //             nimage=$new_image
+        //             env=$env
+        //             echo "$nimage"
+        //             '''
+        //         }
+        //     }
         }
     // here we are defining variables for replacement command      
         // sh '''source variables.txt
