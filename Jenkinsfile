@@ -10,6 +10,7 @@ node {
     // stage('cloning repo'){
     // git branch: 'main', credentialsId: 'github', url: 'https://github.com/MeetSon1/argo-task.git'
     // }
+    // both above method works 
 
     // here we are testing change directory is happaning automatically or not 
     stage('Test auto change directory'){
@@ -17,4 +18,14 @@ node {
         sh 'ls'
     }
 
+    stage('Changing image name in deployment file'){
+    // here we are defining variables for replacement command      
+        sh '''source credentials.txt
+        nimage=$new_image
+        ws=$env'''
+        sh 'echo "$env"'
+        sh 'echo "$nimage"'
+    // here we are performing replacement in deployment file 
+    
+    }
 }
