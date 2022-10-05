@@ -18,9 +18,20 @@ node {
         sh 'ls'
     }
 
-    stage('Changing image name in deployment file'){
+    // stage('Changing image name in deployment file'){
 
-        sh "sh script.sh"
+    stage('Testing script') {
+            steps {
+                script {
+                    bash'''#!/bin/bash 
+                    source credentials.txt
+                    nimage=$new_image
+                    env=$env
+                    echo "$nimage"
+                    '''
+                }
+            }
+        }
     // here we are defining variables for replacement command      
         // sh '''source variables.txt
         // nimage=$new_image
@@ -28,6 +39,3 @@ node {
         // sh 'echo "$env"'
         // sh 'echo "$nimage"'
     // here we are performing replacement in deployment file 
-    
-    }
-}
