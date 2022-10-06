@@ -6,7 +6,7 @@ metadata:
   labels:
     app: webapp
   name: webapp
-  namespace: adev
+  namespace: aprod
 spec:
   replicas: 3
   selector:
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lb-service
-  namespace: adev
+  namespace: aprod
   labels:
     app: lb-service
 spec:
