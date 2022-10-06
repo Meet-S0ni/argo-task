@@ -1,0 +1,21 @@
+# Github Credentials
+
+
+github_url=https://$guser:$gpassword@github.com/MeetSon1/argo-task.git
+
+github_user=MeetSon1
+github_token=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
+
+# Argocd Credentials 
+
+argocd_user=admin
+argocd_password=nFdCJStyqivKEey0
+
+# Latest Image 
+
+# old_image=httpd
+new_image=httpd
+
+# this is for environment
+
+env=adev
