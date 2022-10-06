@@ -35,6 +35,6 @@ spec:
   type: ClusterIP
   ports:
   - port: 80
-    targetPort: 5000
+    targetPort: 80
   selector:
     app: webapp
