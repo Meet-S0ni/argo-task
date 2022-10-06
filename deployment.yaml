@@ -6,7 +6,7 @@ metadata:
   labels:
     app: webapp
   name: webapp
-  namespace: aqa
+  namespace: jss-qa-usw2 
 spec:
   replicas: 3
   selector:
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lb-service
-  namespace: aqa
+  namespace: jss-qa-usw2 
   labels:
     app: lb-service
 spec:
