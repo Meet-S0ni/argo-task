@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: lb-service
-  namespace: adev
+  namespace: aqa
   labels:
     app: lb-service
 spec:
