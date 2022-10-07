@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# getting credentials from credentials.txt file 
+# getting credentials from variables.txt file 
 source variables.txt
 
 # Github Credential 
@@ -13,24 +13,28 @@ argourl=$argocdurl
 auser=$argocd_user
 apassword=$argocd_password
 
-# Latest image from credentials.txt
+# Latest image from variables.txt
 
 # oimage=$old_image
 nimage=$new_image
 
 # Getting Environment Information from user 
+# Getting Environment Information from variables.txt
 
-# echo "Choose your service (JSS PTS ADE): "
-echo "Choose your service (jss pts ade): "
-read svc
+ws=$env
 
-# echo "Choose your Environment :- (QA PROD PRF) "
-echo "Choose your Environment :- (qa prod prf) "
-read env
 
-# echo "Choose AWS Region :- (USE2 USW2) "
-echo "Choose AWS Region :- (usw2 use2) "
-read region
+# # echo "Choose your service (JSS PTS ADE): "
+# echo "Choose your service (jss pts ade): "
+# read svc
+
+# # echo "Choose your Environment :- (QA PROD PRF) "
+# echo "Choose your Environment :- (qa prod prf) "
+# read env
+
+# # echo "Choose AWS Region :- (USE2 USW2) "
+# echo "Choose AWS Region :- (usw2 use2) "
+# read region
 
 echo "#-------------------#"
 ws="${svc}-${env}-${region}"
@@ -90,4 +94,3 @@ if [ $a == "0" ]; then
 else
     echo "Enter valid eironment value"
 fi
-
