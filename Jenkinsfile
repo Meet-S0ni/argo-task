@@ -13,26 +13,35 @@ node {
         sh 'ls'
     }
     
-    // This stage is for ssh into k8s cluster   
+    // This stage is for ssh into argocd cluster   
     stage("SSH Into k8s Server") {
 
         sh 'echo "connecting via ssh to master node"'
         def remote = [:]
-        remote.name = 'k8smaster'
-        remote.host = '13.233.54.174'
-        remote.user = 'azureuser'
-        remote.password = 'Password@123'
+        remote.name = 'argoserver'
+        remote.host = '20.200.207.213'
+        remote.user = 'root'
+        remote.password = 'Test@123'
         remote.allowAnyHosts = true
-
-        stage('Put deployment.yaml into k8smaster') {
-            sshPut remote: remote, from: 'deployment.yaml', into: '.'
-        } 
 
         // stage('Put deployment.yaml into k8smaster') {
         //     sshPut remote: remote, from: 'deployment.yaml', into: '.'
         // } 
 
-        stage('Deploy simple web') {
-            sshCommand remote: remote, command: "kubectl apply -f deployment.yaml"
+        // cloning script repository
+        stage('cloning script repository'){
+            git branch: 'script', credentialsId: 'github', url: 'https://github.com/MeetSon1/argo-task.git'
         }
+        
+        // Testing available files 
+        stage('Test auto change directory'){
+            sh 'echo "$PWD"'
+            sh 'ls'
+        }
+
+
+        // stage('running script') {
+        //     sshCommand remote: remote, command: "chmod +x main.sh"
+        //     sshCommand remote: remote, command: "./main.sh"
+        // }
     } 
