@@ -23,7 +23,6 @@ nimage=$new_image
 
 ws=$env
 
-
 # # echo "Choose your service (JSS PTS ADE): "
 # echo "Choose your service (jss pts ade): "
 # read svc
@@ -38,9 +37,7 @@ ws=$env
 
 echo "#-------------------#"
 ws="${svc}-${env}-${region}"
-# echo "####################"
 
-# echo "$ws"
 # for i in {1..30}; do if [ $i != 10 ]; then echo "hello $i"; fi; done
 # if [[ ("$varword" = $varname1 ) || ("$varword" = $varname2 ) || ("$varword" = $varname3 ) || ("$varword" = $varname4 ) ]]
 # if [ $ws == "JSS_QA_USW2" ]; then
