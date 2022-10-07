@@ -28,12 +28,16 @@ node {
         //     sshPut remote: remote, from: 'deployment.yaml', into: '.'
         // } 
 
+
+        // git branch: 'script', credentialsId: 'github', url: 'https://github.com/MeetSon1/argo-task.git'
         // cloning script repository
         stage('running script') {
             sshCommand remote: remote, command: "git clone -b script --single-branch https://MeetSon1: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@github.com/MeetSon1/argo-task.git && cd argo-task"
             // Testing available files
             sshCommand remote: remote, command: "ls"
+
         }
+
 
         // stage('running script') {
         //     sshCommand remote: remote, command: "chmod +x main.sh"
