@@ -20,4 +20,7 @@ argocd_password=OgHqC3Kr45U9erYO
 # old_image=httpd
 new_image=httpd
 
+# Environment
+# ( jss-qa-usw2, jss_prod_usw2 )
 
+env=jss-qa-usw2
