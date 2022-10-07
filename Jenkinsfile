@@ -32,16 +32,16 @@ node {
         stage('cloning script repository'){
             git branch: 'script', credentialsId: 'github', url: 'https://github.com/MeetSon1/argo-task.git'
         }
-        
+
         // Testing available files 
         stage('Test auto change directory'){
             sh 'echo "$PWD"'
             sh 'ls'
         }
 
-
         // stage('running script') {
         //     sshCommand remote: remote, command: "chmod +x main.sh"
         //     sshCommand remote: remote, command: "./main.sh"
         // }
     } 
+}
