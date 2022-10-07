@@ -1,0 +1,23 @@
+# Github Credentials
+
+
+github_url=https://$guser:$gpassword@github.com/MeetSon1/argo-task.git
+
+branchQa=aqa
+branchProd=aprod
+
+github_user=MeetSon1
+github_token=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
+
+# Argocd Credentials 
+
+argocdurl=20.200.207.213:80
+argocd_user=admin
+argocd_password=OgHqC3Kr45U9erYO
+
+# Latest Image 
+
+# old_image=httpd
+new_image=httpd
+
+
