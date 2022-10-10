@@ -26,7 +26,7 @@ node {
 
         stage('Testing command works or not') {
             sshCommand remote: remote, command: "sudo pwd"
-            sshCommand remote: remote, command: "sudo mkdir ./meet"
+            sshCommand remote: remote, command: "sudo mkdir ~/meet"
             sshCommand remote: remote, command: "sudo ls"
         }
     } 
