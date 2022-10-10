@@ -30,5 +30,4 @@ node {
             sshCommand remote: remote, command: "ls"
         }
     } 
-
 }
