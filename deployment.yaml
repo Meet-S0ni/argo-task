@@ -8,7 +8,7 @@ metadata:
   name: webapp
   namespace: jss-qa-usw2 
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: flaskdemo
