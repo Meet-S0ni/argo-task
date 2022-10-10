@@ -13,7 +13,7 @@ node {
         remote.name = 'argoserver'
         remote.host = '13.233.54.174'
         remote.user = 'root'
-        remote.password = 'Password@123'
+        remote.password = 'Test@123'
         remote.allowAnyHosts = true
 
         // stage('Put deployment.yaml into k8smaster') {
@@ -24,10 +24,11 @@ node {
         //     sshPut remote: remote, from: 'variables.sh', into: '.'
         // } 
 
-        stage('git clone and argocd sync') {
-            sshCommand remote: remote, command: "pwd"
-            sshCommand remote: remote, command: "mkdir ./meet"
-            sshCommand remote: remote, command: "ls"
+        stage('Testing command works or not') {
+            sshCommand remote: remote, command: "sudo pwd"
+            sshCommand remote: remote, command: "sudo mkdir ./meet"
+            sshCommand remote: remote, command: "sudo ls"
         }
     } 
+
 }
