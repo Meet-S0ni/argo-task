@@ -12,8 +12,8 @@ node {
         def remote = [:]
         remote.name = 'argoserver'
         remote.host = '13.233.54.174'
-        remote.user = 'azureuser'
-        remote.password = 'Password@123'
+        remote.user = 'root'
+        remote.password = 'Test@123'
         remote.allowAnyHosts = true
 
         sh 'echo "completed ssh"' 
