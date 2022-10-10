@@ -12,8 +12,8 @@ node {
         def remote = [:]
         remote.name = 'argoserver'
         remote.host = '13.233.54.174'
-        remote.user = 'root'
-        remote.password = 'Test@123'
+        remote.user = 'azureuser'
+        remote.password = 'Password@123'
         remote.allowAnyHosts = true
 
         // stage('Put deployment.yaml into k8smaster') {
@@ -30,5 +30,4 @@ node {
             sshCommand remote: remote, command: "sudo ls"
         }
     } 
-
 }
