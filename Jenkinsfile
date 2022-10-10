@@ -25,7 +25,9 @@ node {
         // } 
 
         stage('git clone and argocd sync') {
-            sshCommand remote: remote, command: "mkdir /meet"
+            sshCommand remote: remote, command: "pwd"
+            sshCommand remote: remote, command: "mkdir ./meet"
+            sshCommand remote: remote, command: "ls"
         }
     } 
 
