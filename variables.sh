@@ -17,7 +17,7 @@ case $ws in
 "jss-qa-usw2") echo "your env is jss-qa-usw2"
 
     github_user=MeetSon1
-    github_token=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
+    github_token=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
     github_url=https://$github_user:$github_token@github.com/MeetSon1/argo-task.git
     gbranch=aqa
     argocdurl=20.120.72.99:80
@@ -29,7 +29,7 @@ case $ws in
 "jss-prod-usw2") echo "your env is jss-prod-usw2"
 
     github_user=MeetSon1
-    github_token=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
+    github_token=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
     github_url=https://$github_user:$github_token@github.com/MeetSon1/argo-task.git
     gbranch=aprod
     argocdurl=20.120.72.99:80
