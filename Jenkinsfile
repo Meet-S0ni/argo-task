@@ -10,8 +10,8 @@ node {
 
         sh 'echo "connecting via ssh to master node"'
         def remote = [:]
-        remote.name = 'argoserver'
-        remote.host = '13.233.54.174'
+        remote.name = 'myargovm'
+        remote.host = '20.160.96.94'
         remote.user = 'root'
         remote.password = 'Test@123'
         remote.allowAnyHosts = true
