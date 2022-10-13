@@ -6,7 +6,7 @@ node {
     checkout scm
     }
 
-    stage("SSH Into argocd Server") {
+    stage("SSH Into k8s Server") {
 
         sh 'echo "connecting via ssh to master node"'
         def remote = [:]
@@ -16,22 +16,12 @@ node {
         remote.password = 'meet'
         remote.allowAnyHosts = true
 
-        sh 'echo "completed ssh"' 
-
         // stage('Put deployment.yaml into k8smaster') {
-        //     sshPut remote: remote, from: 'main.sh', into: '.'
+        //     sshPut remote: remote, from: 'deployment.yaml', into: '.'
         // } 
 
-        // stage('Put deployment.yaml into k8smaster') {
-        //     sshPut remote: remote, from: 'variables.sh', into: '.'
-        // } 
-
-        stage('Testing command works or not') {
-            // sh 'echo "Testing pwd command"' 
+        stage('Deploy simple web') {
             sshCommand remote: remote, command: "pwd"
-            // sh 'echo "testing mkdir command"' 
-            sshCommand remote: remote, command: "mkdir ./meet"
-            sshCommand remote: remote, command: "ls"
         }
     } 
 }
