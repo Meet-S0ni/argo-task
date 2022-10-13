@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Created by meet soni
 # getting environment variables from variables.sh file 
 source variables.sh
 
@@ -15,8 +14,8 @@ argourl=$argocdurl
 auser=$argocduser
 apassword=$argocdpassword
 
-# image
-nimage=$new_image
+# Replicas 
+replicas=$maxreplicas
 
 # namespace
 app=$k8snamespace
@@ -27,10 +26,11 @@ app=$k8snamespace
     # cloning repo with branch 
     git clone -b $branch --single-branch $gurl argo-task && cd argo-task
     
-    oimage=$(cat deployment.yaml | grep image | awk '{print $3}')
-
-    # makeing changes in file  
-    sed -i 's/'$oimage'/'$nimage'/g' deployment.yaml 
+    # variables for replicas
+    oreplicas="replicas: $(cat deployment.yaml | grep replicas | awk '{print $2}')"
+    newreplicas="replicas: $replicas"
+    # changing replicas
+    sed -i "s/$oreplicas/$newreplicas/g" deployment.yaml
 
     # commiting changes to repository 
     git add .
