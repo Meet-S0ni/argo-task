@@ -10,10 +10,10 @@ node {
 
         sh 'echo "connecting via ssh to master node"'
         def remote = [:]
-        remote.name = 'myargovm'
-        remote.host = '20.160.96.94'
-        remote.user = 'root'
-        remote.password = 'Test@123'
+        remote.name = 'meetvm2'
+        remote.host = '4.240.61.198'
+        remote.user = 'meet'
+        remote.password = 'meet'
         remote.allowAnyHosts = true
 
         sh 'echo "completed ssh"' 
@@ -28,10 +28,10 @@ node {
 
         stage('Testing command works or not') {
             sh 'echo "Testing pwd command"' 
-            sshCommand remote: remote, command: "sudo pwd"
+            sshCommand remote: remote, command: "pwd"
             sh 'echo "testing mkdir command"' 
-            sshCommand remote: remote, command: "sudo mkdir ~/meet"
-            sshCommand remote: remote, command: "sudo ls"
+            sshCommand remote: remote, command: "mkdir ~/meet"
+            sshCommand remote: remote, command: "ls"
         }
     } 
 }
