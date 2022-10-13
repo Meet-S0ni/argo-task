@@ -30,7 +30,7 @@ node {
             // sh 'echo "Testing pwd command"' 
             sshCommand remote: remote, command: "pwd"
             // sh 'echo "testing mkdir command"' 
-            sshCommand remote: remote, command: "mkdir ~/meet"
+            sshCommand remote: remote, command: "mkdir ./meet"
             sshCommand remote: remote, command: "ls"
         }
     } 
