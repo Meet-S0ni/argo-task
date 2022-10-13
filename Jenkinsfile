@@ -22,8 +22,8 @@ node {
         } 
 
         stage('Deploy simple web') {
-            sshCommand remote: remote, command: "bash main.sh jss qa usw2 4"
             sshCommand remote: remote, command: "ls"
+            sshCommand remote: remote, command: "bash main.sh jss qa usw2 4"
         }
     } 
 }
