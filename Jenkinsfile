@@ -16,7 +16,7 @@ node {
         remote.password = 'meet'
         remote.allowAnyHosts = true
 
-        sh 'echo "completed ssh"' 
+        // sh 'echo "completed ssh"' 
 
         // stage('Put deployment.yaml into k8smaster') {
         //     sshPut remote: remote, from: 'main.sh', into: '.'
@@ -27,9 +27,9 @@ node {
         // } 
 
         stage('Testing command works or not') {
-            sh 'echo "Testing pwd command"' 
+            // sh 'echo "Testing pwd command"' 
             sshCommand remote: remote, command: "pwd"
-            sh 'echo "testing mkdir command"' 
+            // sh 'echo "testing mkdir command"' 
             sshCommand remote: remote, command: "mkdir ~/meet"
             sshCommand remote: remote, command: "ls"
         }
