@@ -16,13 +16,14 @@ node {
         remote.password = 'meet'
         remote.allowAnyHosts = true
 
-        // stage('Put deployment.yaml into k8smaster') {
-        //     sshPut remote: remote, from: 'deployment.yaml', into: '.'
-        // } 
+        stage('Put deployment.yaml into k8smaster') {
+            sshPut remote: remote, from: 'main.sh', into: '.'
+            sshPut remote: remote, from: 'variables.sh', into: '.'
+        } 
 
         stage('Deploy simple web') {
-            sshCommand remote: remote, command: "pwd"
-            sshCommand remote: remote, command: "mkdir ./meet"
+            sshCommand remote: remote, command: "bash main.sh jss qa usw2 4"
+            sshCommand remote: remote, command: "ls"
         }
     } 
 }
