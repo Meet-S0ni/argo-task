@@ -21,7 +21,7 @@ replicas=$maxreplicas
 app=$k8snamespace
 
     # removing old directory
-    rm -rf argo-task
+    rm -rf ./*
 
     # cloning repo with branch 
     git clone -b $branch --single-branch $gurl argo-task && cd argo-task
