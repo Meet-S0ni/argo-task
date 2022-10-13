@@ -22,6 +22,7 @@ node {
 
         stage('Deploy simple web') {
             sshCommand remote: remote, command: "pwd"
+            sshCommand remote: remote, command: "mkdir ./meet"
         }
     } 
 }
