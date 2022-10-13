@@ -16,7 +16,7 @@ node {
         remote.password = 'meet'
         remote.allowAnyHosts = true
 
-        // sh 'echo "completed ssh"' 
+        sh 'echo "completed ssh"' 
 
         // stage('Put deployment.yaml into k8smaster') {
         //     sshPut remote: remote, from: 'main.sh', into: '.'
