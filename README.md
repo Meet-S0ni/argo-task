@@ -1,3 +1,3 @@
 # argo-task
 
-codes are divided into multiple branches 
+codes are divided based on branches 
